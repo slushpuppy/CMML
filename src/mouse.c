@@ -1,5 +1,7 @@
 #include "mouse.h"
 
+#include <string.h>
+
 void mouseMove(uint32_t x, uint32_t y)
 {
 #ifdef LINUX
