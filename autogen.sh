@@ -1,5 +1,6 @@
 #!/bin/sh
-aclocal
+aclocal -Im4
+libtoolize --copy --force
 autoheader
-automake -a
-autoreconf --force --install -I config -I m4
+automake --add-missing --copy --foreign
+autoconf

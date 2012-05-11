@@ -2,27 +2,52 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.68])
-AC_INIT([MML], [0.1a])
-AM_INIT_AUTOMAKE(@PACKAGE_NAME@, @PACKAGE_VERSION@)
+AC_INIT([MML], [0.1a], [Dgby714@gmail.com], [mml], [https://github.com/Dgby714/CMML])
+
+AM_INIT_AUTOMAKE([foreign])
 
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_SRCDIR([src/mml.c])
+AC_CONFIG_SRCDIR([src/linux/os.c])
 AC_CONFIG_HEADERS([config.h])
 
-# Checks for programs.
-AC_PROG_CC
+PKG_PROG_PKG_CONFIG
 AC_PROG_LIBTOOL
+LT_INIT
 
-# Checks for libraries.
+AC_PROG_CC
 
-# Checks for header files.
+AC_MSG_CHECKING([platform])
+TARGET=unknown
+case "$host" in
+  *-linux-*)
+    TARGET=LINUX;  
+    ;;
+  *-win32* | *-cygwin* | *-mingw*)
+    TARGET=WINDOWS
+    ;;
+  *-darwin*)
+    TARGET=iOS
+    ;;
+esac
+
+AC_MSG_RESULT([$TARGET])
+
+if test "$TARGET" = unknown; then
+  if test x"$host" = x; then
+    AC_MSG_ERROR([mml has not been ported to your platform.])
+  fi
+  
+  AC_MSG_ERROR([mml has not been ported to "$host".])
+fi
+
+AM_CONDITIONAL(LINUX, test x"$TARGET" = xLINUX)
+AM_CONDITIONAL(WINDOWS, test x"$TARGET" = xWINDOWS)
+AM_CONDITIONAL(iOS, test x"$TARGET" = xiOS)
+
 AC_PATH_X
 AC_CHECK_HEADERS([stdlib.h])
 
-# Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_UINT32_T
 
-# Checks for library functions.
-
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile mml.pc])
 AC_OUTPUT
