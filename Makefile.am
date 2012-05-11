@@ -3,5 +3,6 @@ ACLOCAL_AMFLAGS = -I m4
 lib_LTLIBRARIES = libmml.la
 libmml_la_SOURCES = src/mml.c src/os.c src/mouse.c
 libmml_la_LDFLAGS = -version-info 0:0:0
+libmml_la_LIBADD = -lX11
 include_HEADERS = src/mml.h src/types.h src/os.h src/mouse.h
 
