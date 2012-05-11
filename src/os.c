@@ -7,7 +7,7 @@
 Display *display;
 #endif
 
-static void __attribute__((constructor(101)))  os_init(void)
+static void constructor(101) os_init(void)
 {
 #ifdef LINUX
 	display = XOpenDisplay(NULL);
@@ -20,7 +20,7 @@ static void __attribute__((constructor(101)))  os_init(void)
 #endif
 }
 
-static void __attribute__((destructor(101))) os_free(void)
+static void destructor(101) os_free(void)
 {
 #ifdef LINUX 
 	XCloseDisplay(display);
