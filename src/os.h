@@ -17,16 +17,15 @@
 
 #include "mml.h"
 
-#ifdef LINUX 
-
+#ifdef LINUX
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
 extern Display *display;
-
 #endif
 
-extern void os_init(void);
-extern void os_free(void);
+#ifdef WINDOWS
+#include <windows.h>
+#endif
 
 #endif
