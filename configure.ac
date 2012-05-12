@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.68])
-AC_INIT([MML], [0.1a], [Dgby714@gmail.com], [mml], [https://github.com/Dgby714/CMML])
+AC_INIT([MML],[0.1a],[Dgby714@gmail.com],[mml],[https://github.com/Dgby714/CMML])
 
 AM_INIT_AUTOMAKE([foreign silent-rules])
 AM_SILENT_RULES([yes])
@@ -13,11 +13,9 @@ AC_CONFIG_SRCDIR([src/linux/os.c])
 AC_CONFIG_HEADERS([config.h])
 
 PKG_PROG_PKG_CONFIG
-AC_PROG_LIBTOOL
+LT_INIT([dlopen])
 AC_PROG_CC
 AC_PROG_CXX
-
-AC_LIBTOOL_DLOPEN
 
 AC_MSG_CHECKING([platform])
 TARGET=unknown
@@ -52,6 +50,7 @@ AC_CHECK_HEADERS([stdlib.h])
 
 AC_CHECK_FUNCS([memset])
 AC_HEADER_STDBOOL
+AC_C_INLINE
 
 AC_TYPE_UINT32_T
 AC_TYPE_UINT8_T
