@@ -4,7 +4,9 @@
 AC_PREREQ([2.68])
 AC_INIT([MML], [0.1a], [Dgby714@gmail.com], [mml], [https://github.com/Dgby714/CMML])
 
-AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE([foreign silent-rules])
+AM_SILENT_RULES([yes])
+AM_MAINTAINER_MODE
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([src/linux/os.c])
@@ -12,11 +14,10 @@ AC_CONFIG_HEADERS([config.h])
 
 PKG_PROG_PKG_CONFIG
 AC_PROG_LIBTOOL
-LT_INIT
-
 AC_PROG_CC
 AC_PROG_CXX
-AC_PROG_RANLIB
+
+AC_LIBTOOL_DLOPEN
 
 AC_MSG_CHECKING([platform])
 TARGET=unknown
