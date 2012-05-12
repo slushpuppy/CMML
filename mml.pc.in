@@ -3,9 +3,9 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: MML
+Name: @PACKAGE_NAME@
 Description: ...
 Requires: x11
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -lmml
-Cflags: -I${includedir}/mml -I${libdir}/mml/include
+Cflags: -I${includedir}/mml
