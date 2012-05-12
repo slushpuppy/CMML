@@ -36,7 +36,7 @@ static DWORD _b2b(mouseButton b, int up)
 	}
 }
 
-void mouseClick(mouseButton button)
+void mouseDown(mouseButton button)
 {
 	INPUT input;
 	memset(&input, 0, sizeof(input));
@@ -45,8 +45,15 @@ void mouseClick(mouseButton button)
 	
 	input.mi.dwFlags = _b2b(button, 1);
 	SendInput(1, &input, sizeof(input));
+}
+
+void mouseUp(mouseButton button)
+{
+	INPUT input;
+	memset(&input, 0, sizeof(input));
+	
+	input.type = INPUT_MOUSE;
 	
 	input.mi.dwFlags = _b2b(button, 0);
 	SendInput(1, &input, sizeof(input));
 }
-

@@ -3,7 +3,7 @@
 
 #include "mml.h"
 
-#define _WIN32_WINNT 0x0403
+#define _WIN32_WINNT _WIN32_WINNT_WINXP
 #include <windows.h>
 
 #endif

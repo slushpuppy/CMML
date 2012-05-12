@@ -5,6 +5,9 @@
 
 extern void mouseMove(uint32_t x, uint32_t y);
 extern void mousePos(uint32_t *x, uint32_t *y);
+
+extern void mouseDown(mouseButton button);
+extern void mouseUp(mouseButton button);
 extern void mouseClick(mouseButton button);
 
 #endif
