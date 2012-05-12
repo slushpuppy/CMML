@@ -23,9 +23,14 @@ void mousePos(uint32_t *x, uint32_t *y)
 	*y = event.xbutton.y;
 }
 
-static uint32_t _b2b(mouseButton b)
+static inline uint32_t _b2b(mouseButton b)
 {
-	return b; //FIXME: map mouseButton to X button
+	switch(b) {
+		case mouseLeft: return Button1;
+		case mouseRight: return Button3;
+		case mouseMiddle: return Button2;
+		default: return 0;
+	}
 }
 
 void mouseClick(mouseButton button)
