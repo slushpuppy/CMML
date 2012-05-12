@@ -26,7 +26,7 @@ void mousePos(uint32_t *x, uint32_t *y)
 	GCEventRef event;
 	memset(event, 0, sizeof(event));
 	
-	GCEventCreate(NULL);
+	event = GCEventCreate(NULL);
 	point = GCEventGetLocation(event);
 	CFRelease(event);
 	
@@ -34,7 +34,7 @@ void mousePos(uint32_t *x, uint32_t *y)
 	*y = point.y;
 }
 
-static void _b2b(mouseButton button, int up, CGMouseButton *b, CGEventType *t)
+static inline void _b2b(mouseButton button, int up, CGMouseButton *b, CGEventType *t)
 {
 	switch (button) {
 		case mouseLeft:
@@ -62,6 +62,25 @@ static void _b2b(mouseButton button, int up, CGMouseButton *b, CGEventType *t)
 	}
 }
 
+static inline void _mouseEvent(GCMouseButton button, GCEventType type)
+{
+	GCEventRef event;
+	memset(&event, 0, sizeof(event));
+
+	GCPoint point;
+	memset(&point, 0, sizeof(point));
+
+	event = GCEventCreate(NULL);
+	point = GCEventGetLocation(event);
+	CFRelease(event);
+
+	memset(&event, 0, sizeof(event));
+
+	event = GCEventCreateMouseEvent(NULL, type, point, button);
+	GCEventPost(kCGHIDEventTap, event);
+	CFRelease(event);
+}
+
 void mouseDown(mouseButton button)
 {
 	CGMouseButton b = kCGMouseButtonLeft;
@@ -69,17 +88,7 @@ void mouseDown(mouseButton button)
 	
 	_b2b(button, 0, &b, &t);
 	
-	CGEventRef event;
-	memset(&event, 0, sizeof(event));
-	
-	CGPoint point;
-	memset(&point, 0, sizeof(point));
-	
-	mousePos(&point.x, &point.y);
-	
-	event = CGEventCreateMouseEvent(NULL, t, point, b);
-	CGEventPost(kCGHIDEventTap, event);
-	CFRelease(event);
+	_mouseEvent(b, t);	
 }
 
 void mouseUp(mouseButton button)
@@ -88,16 +97,6 @@ void mouseUp(mouseButton button)
 	CGEventType t = kCGEventNull;
 	
 	_b2b(button, 1, &b, &t);
-	
-	CGEventRef event;
-	memset(&event, 0, sizeof(event));
-	
-	CGPoint point;
-	memset(&point, 0, sizeof(point));
-	
-	mousePos(&point.x, &point.y);
-	
-	event = CGEventCreateMouseEvent(NULL, t, point, b);
-	CGEventPost(kCGHIDEventTap, event);
-	CFRelease(event);
+
+	_mouseEvent(b, t);
 }
