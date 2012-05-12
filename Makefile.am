@@ -34,12 +34,12 @@ libmml_la_LIBADD = libmml_win.la
 headers_HEADERS += include/windows/os.h
 endif
 
-if iOS
+if MAC 
 noinst_LTLIBRARIES = libmml_mac.la
-libmml_mac_la_SOURCES = 
+libmml_mac_la_SOURCES = src/mac/mouse.c
 libmml_mac_la_CPPFLAGS = -I${srcdir}/include/mac/ ${libmml_la_CPPFLAGS}
 libmml_la_LIBADD = libmml_mac.la
-headers_HEADERS += 
+headers_HEADERS += include/mac/os.h
 endif
 
 if LINUX

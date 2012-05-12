@@ -29,7 +29,7 @@ case "$host" in
     TARGET=WINDOWS
     ;;
   *-darwin*)
-    TARGET=iOS
+    TARGET=MAC
     ;;
 esac
 
@@ -45,7 +45,7 @@ fi
 
 AM_CONDITIONAL(LINUX, test x"$TARGET" = xLINUX)
 AM_CONDITIONAL(WINDOWS, test x"$TARGET" = xWINDOWS)
-AM_CONDITIONAL(iOS, test x"$TARGET" = xiOS)
+AM_CONDITIONAL(MAC, test x"$TARGET" = xMAC)
 
 AC_PATH_X
 AC_CHECK_HEADERS([stdlib.h])
