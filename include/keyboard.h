@@ -8,6 +8,7 @@ extern void keyboardUp(keyboardKey key);
 
 extern void keyboardPress(keyboardKey key);
 
-extern uint32_t keyboardSend(char *str);
+extern keyboardKey keyboardToKey(const char c);
+extern uint32_t keyboardSend(const char *str);
 
 #endif

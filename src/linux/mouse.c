@@ -1,7 +1,5 @@
 #include "mouse.h"
 
-#include <string.h>
-
 void mouseMove(uint32_t x, uint32_t y)
 {
 	XWarpPointer(display, None, DefaultRootWindow(display), 0, 0, 0, 0, x, y);

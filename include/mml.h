@@ -4,6 +4,10 @@
 #define constructor(x) __attribute__((constructor(x)))
 #define destructor(x) __attribute__((destructor(x)))
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "types.h"
 #include "os.h"
 #include "mouse.h"

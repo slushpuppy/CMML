@@ -10,7 +10,7 @@ void keyboardUp(keyboardKey key)
 	
 }
 
-uint32_t keyboardSend(char *str)
+keyboardKey keyboardToKey(const char c)
 {
-	
+	return keyUnknown;
 }
