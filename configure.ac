@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.68])
-AC_INIT([MML],[0.1a],[Dgby714@gmail.com],[mml],[https://github.com/Dgby714/CMML])
+AC_INIT([MML],[0.0.0],[Dgby714@gmail.com],[mml],[https://github.com/Dgby714/CMML])
 
 AC_CONFIG_AUX_DIR([config])
 

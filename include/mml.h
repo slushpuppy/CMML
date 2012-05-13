@@ -9,7 +9,9 @@
 #include <string.h>
 
 #include "types.h"
+#include "version.h"
 #include "os.h"
 #include "mouse.h"
+#include "keyboard.h"
 
 #endif
