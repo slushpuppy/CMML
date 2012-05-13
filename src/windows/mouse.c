@@ -19,18 +19,9 @@ void mousePos(uint32_t *x, uint32_t *y)
 static DWORD _b2b(mouseButton b, bool up)
 {
 	switch (b) {
-		case mouseLeft:
-			if (up) return MOUSEEVENTF_LEFTUP;
-			return MOUSEEVENTF_LEFTDOWN;
-			break;
-		case mouseRight:
-			if (up) return MOUSEEVENTF_RIGHTUP;
-			return MOUSEEVENTF_RIGHTDOWN;
-			break;
-		case mouseMiddle:
-			if (up) return MOUSEEVENTF_MIDDLEUP;
-			return MOUSEEVENTF_MIDDLEDOWN;
-			break;
+		case mouseLeft: return (up) ? MOUSEEVENTF_LEFTUP:MOUSEEVENTF_LEFTDOWN;
+		case mouseRight: return (up) ? MOUSEEVENTF_RIGHTUP:MOUSEEVENTF_RIGHTDOWN;
+		case mouseMiddle: return (up) ? MOUSEEVENTF_MIDDLEUP:MOUSEEVENTF_MIDDLEDOWN;
 	}
 }
 
