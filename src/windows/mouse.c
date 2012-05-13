@@ -18,7 +18,7 @@ void mousePos(uint32_t *x, uint32_t *y)
 	*y = point.y;
 }
 
-static DWORD _b2b(mouseButton b, int up)
+static DWORD _b2b(mouseButton b, bool up)
 {
 	switch (b) {
 		case mouseLeft:
@@ -43,7 +43,7 @@ void mouseDown(mouseButton button)
 	
 	input.type = INPUT_MOUSE;
 	
-	input.mi.dwFlags = _b2b(button, 1);
+	input.mi.dwFlags = _b2b(button, false);
 	SendInput(1, &input, sizeof(input));
 }
 
@@ -54,6 +54,6 @@ void mouseUp(mouseButton button)
 	
 	input.type = INPUT_MOUSE;
 	
-	input.mi.dwFlags = _b2b(button, 0);
+	input.mi.dwFlags = _b2b(button, true);
 	SendInput(1, &input, sizeof(input));
 }

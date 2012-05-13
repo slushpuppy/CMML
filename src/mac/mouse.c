@@ -34,7 +34,7 @@ void mousePos(uint32_t *x, uint32_t *y)
 	*y = point.y;
 }
 
-static inline void _b2b(mouseButton button, int up, CGMouseButton *b, CGEventType *t)
+static inline void _b2b(mouseButton button, bool up, CGMouseButton *b, CGEventType *t)
 {
 	switch (button) {
 		case mouseLeft:
@@ -86,7 +86,7 @@ void mouseDown(mouseButton button)
 	CGMouseButton b = kCGMouseButtonLeft;
 	CGEventType t = kCGEventNull;
 	
-	_b2b(button, 0, &b, &t);
+	_b2b(button, false, &b, &t);
 	
 	_mouseEvent(b, t);	
 }
@@ -96,7 +96,7 @@ void mouseUp(mouseButton button)
 	CGMouseButton b = kCGMouseButtonLeft;
 	CGEventType t = kCGEventNull;
 	
-	_b2b(button, 1, &b, &t);
+	_b2b(button, true, &b, &t);
 
 	_mouseEvent(b, t);
 }

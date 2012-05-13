@@ -1,7 +1,8 @@
 #ifndef __types_h_
 #define __types_h_
 
-#include <inttypes.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 typedef struct {
 	uint32_t x;
