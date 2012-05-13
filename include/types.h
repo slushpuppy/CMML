@@ -17,6 +17,7 @@ typedef struct {
 } Box;
 
 typedef enum { mouseLeft, mouseRight, mouseMiddle } mouseButton;
+typedef enum { keyUnknown } keyboardKey;
 
 typedef uint32_t Color;
 
