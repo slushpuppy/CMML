@@ -7,13 +7,15 @@ EXTRA_DIST = include/mml.h include/types.h autogen.sh \
 	     include/linux/os.h include/windows/os.h include/mac/os.h
 
 lib_LTLIBRARIES = libmml.la
-libmml_la_SOURCES = src/version.c src/mouse.c src/keyboard.c
+libmml_la_SOURCES = src/mml.c src/version.c src/mouse.c \
+		    src/keyboard.c src/target.c src/human.c
 libmml_la_CPPFLAGS = -I${srcdir}/include/
 libmml_la_LDFLAGS = -version-info 0:0:0
 
 headersdir = ${includedir}/mml
 headers_HEADERS = include/mml.h include/version.h include/types.h \
-		  include/mouse.h include/keyboard.h
+		  include/mouse.h include/keyboard.h include/target.h \
+		  include/human.h
 
 if LINUX
 noinst_LTLIBRARIES = libmml_linux.la

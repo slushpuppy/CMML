@@ -5,14 +5,14 @@
 
 Display *display;
 
-static void constructor(101) _init(void)
+static void constructor(102) _init(void)
 {
 	display = XOpenDisplay(NULL);
 
 	XSelectInput(display, DefaultRootWindow(display), KeyReleaseMask);
 }
 
-static void destructor(101) _free(void)
+static void destructor(102) _free(void)
 {
 	XCloseDisplay(display);
 }

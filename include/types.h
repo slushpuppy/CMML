@@ -25,7 +25,7 @@ typedef struct {
 	uint8_t B;
 	uint8_t G;
 	uint8_t R;
-} RGB28;
+} RGB24;
 
 typedef struct {
 	uint8_t B;
@@ -39,8 +39,5 @@ typedef struct {
 	double S;
 	double L;
 } HSL;
-
-extern Point point(uint32_t x, uint32_t y);
-extern Box box(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2);
 
 #endif
