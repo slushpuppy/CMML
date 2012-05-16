@@ -1,6 +1,7 @@
-#include "mml.h"
+#include "human.h"
 
-static constructor(101) void _init(void)
+
+static __attribute__((constructor(101))) void _init(void)
 {
 	randomize();
 }
