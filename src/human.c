@@ -88,7 +88,7 @@ void mouseMoveH(uint32_t x, uint32_t y, uint8_t r)
 		start_y += veloY;
 
 		if ((round(start_x) != last_x) || (round(start_y) != last_y))
-			mouseMove(start_x, start_y);
+			mouseMove(round(start_x), round(start_y));
 
 		step = hypot(start_x - last_x, start_y - last_y);
 		wait(round((max_wait - min_wait) * (step / max_step) + min_wait));
