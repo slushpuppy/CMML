@@ -1,7 +1,7 @@
 #ifndef __human_h_
 #define __human_h_
 
-#include "mml.h"
+#include "types.h"
 
 extern void randomize(void);
 extern int32_t randRange(int32_t min, int32_t max);

@@ -13,4 +13,6 @@
 
 #include <windows.h>
 
+typedef int keyboardKey;
+
 #endif

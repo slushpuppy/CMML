@@ -6,4 +6,6 @@
 #include <Foundation/Foundation.h>
 #include <ApplicationServices/ApplicationServices.h>
 
+typedef int keyboardKey;
+
 #endif

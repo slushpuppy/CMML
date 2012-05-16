@@ -1,7 +1,8 @@
 #ifndef __keyboard_h_
 #define __keyboard_h_
 
-#include "mml.h"
+#include "types.h"
+#include "os.h"
 
 extern void keyboardDown(keyboardKey key);
 extern void keyboardUp(keyboardKey key);

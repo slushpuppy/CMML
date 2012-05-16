@@ -1,4 +1,8 @@
 #include "human.h"
+#include <stdlib.h>
+#include <time.h>
+#include <limits.h>
+#include <math.h>
 
 uint32_t mouseSpeed = 20;
 
@@ -61,11 +65,7 @@ void mouseMoveH(uint32_t x, uint32_t y, uint8_t r)
 			windX = windX / sqrt2;
 			windY = windY / sqrt2;
 
-			if (max_step < 3) {
-				max_step = randRange(3, 6);
-			} else {
-				max_step = max_step / sqrt5;
-			}
+			max_step = (max_step < 3) ? randRange(3, 6) : max_step / sqrt5;
 		}
 
 		veloX = veloX + windX;

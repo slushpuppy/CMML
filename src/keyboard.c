@@ -1,4 +1,5 @@
 #include "keyboard.h"
+#include <string.h>
 
 void keyboardPress(keyboardKey key)
 {
