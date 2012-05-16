@@ -4,6 +4,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#ifdef min
+# undef min
+#endif
+#define min(a,b) ((a)<(b)?(a):(b))
+
 typedef struct {
 	uint32_t x;
 	uint32_t y;

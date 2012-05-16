@@ -15,14 +15,14 @@ libmml_la_LDFLAGS = -version-info 0:0:0
 headersdir = ${includedir}/mml
 headers_HEADERS = include/mml.h include/version.h include/types.h \
 		  include/mouse.h include/keyboard.h include/target.h \
-		  include/human.h
+		  include/human.h include/color.h
 
 if LINUX
 noinst_LTLIBRARIES = libmml_linux.la
 libmml_linux_la_SOURCES = src/linux/os.c src/linux/mouse.c src/linux/keyboard.c
 libmml_la_CPPFLAGS += -I${srcdir}/include/linux/
 libmml_linux_la_CPPFLAGS = ${libmml_la_CPPFLAGS}
-libmml_linux_la_LIBADD = -lX11
+libmml_linux_la_LIBADD = -lX11 -lm
 libmml_la_LIBADD = libmml_linux.la
 headers_HEADERS += include/linux/os.h
 endif
@@ -48,3 +48,6 @@ if LINUX
 pkgconfigdir = ${libdir}/pkgconfig
 pkgconfig_DATA = mml.pc
 endif
+
+docdir = $(datadir)/doc/mml
+doc_DATA = README AUTHORS COPYING
