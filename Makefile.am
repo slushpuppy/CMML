@@ -46,7 +46,8 @@ if MAC
 noinst_LTLIBRARIES = libmml_mac.la
 libmml_mac_la_SOURCES = src/mac/mouse.c src/mac/keyboard.c
 libmml_la_CPPFLAGS += -I${srcdir}/include/mac/
-libmml_mac_la_CPPFLAGS = ${libmml_la_CPPFLAGS} -DMAC -D__NEED_MAC_H_ -ObjC -framework Foundation -framework ApplicationServices -lobjc
+libmml_mac_la_CPPFLAGS = ${libmml_la_CPPFLAGS} -DMAC -D__NEED_MAC_H_ -ObjC
+libmml_mac_la_LDFLAGS = -framework Foundation -framework ApplicationServices
 libmml_la_LIBADD = libmml_mac.la
 headers_HEADERS += include/mac/os.h
 endif
