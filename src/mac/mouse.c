@@ -45,8 +45,8 @@ static inline void _b2b(mouseButton button, bool up, CGMouseButton *b, CGEventTy
 			*t = (up) ? kCGEventRightMouseUp : kCGEventRightMouseDown;
 			break;
 		case mouseMiddle:
-			*b = kCGMouseButtonMiddle;
-			*t = (up) ? kCGEventMiddleMouseUp : kCGEventMiddleMouseDown;
+			*b = kCGMouseButtonCenter;
+			*t = (up) ? kCGEventOtherMouseUp : kCGEventOtherMouseDown;
 			break;
 		default: _b2b(mouseLeft, up, b, t);
 	}
