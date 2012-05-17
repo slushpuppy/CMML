@@ -1,5 +1,4 @@
 #include "keyboard.h"
-#include "os.h"
 
 void keyboardDown(keyboardKey key)
 {
