@@ -30,7 +30,7 @@ int32_t randNumber(int32_t number)
 }
 
 
-void wait(uint32_t ms)
+void mssleep(uint32_t ms)
 {
 	usleep(ms * 1000);
 }
@@ -91,7 +91,7 @@ void mouseMoveH(uint32_t x, uint32_t y, uint8_t r)
 			mouseMove(round(start_x), round(start_y));
 
 		step = hypot(start_x - last_x, start_y - last_y);
-		wait(round((max_wait - min_wait) * (step / max_step) + min_wait));
+		mssleep(round((max_wait - min_wait) * (step / max_step) + min_wait));
 
 		lastDist = dist;
 	}
@@ -103,7 +103,7 @@ void mouseMoveH(uint32_t x, uint32_t y, uint8_t r)
 void mouseClickH(mouseButton button)
 {
 	mouseDown(button);
-	wait(80 + randNumber(120));
+	mssleep(80 + randNumber(120));
 	mouseUp(button);
-	wait(50 + randNumber(50));
+	mssleep(50 + randNumber(50));
 }
