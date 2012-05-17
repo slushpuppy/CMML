@@ -12,5 +12,5 @@ void keyboardUp(keyboardKey key)
 
 keyboardKey keyboardToKey(const char c)
 {
-	return keyUnknown;
+	return -1;
 }
