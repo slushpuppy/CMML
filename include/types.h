@@ -10,18 +10,6 @@
 #endif
 #define min(a,b) ((a)<(b)?(a):(b))
 
-typedef struct {
-	uint32_t x;
-	uint32_t y;
-} Point;
-
-typedef struct {
-	uint32_t x1;
-	uint32_t y1;
-	uint32_t x2;
-	uint32_t y2;
-} Box;
-
 typedef enum { mouseLeft, mouseRight, mouseMiddle } mouseButton;
 
 typedef uint32_t Color;
