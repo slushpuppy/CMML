@@ -1,4 +1,5 @@
 #include "mouse.h"
+#include "os.h"
 
 void mouseMove(uint32_t x, uint32_t y)
 {
