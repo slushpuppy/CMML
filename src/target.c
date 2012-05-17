@@ -1,13 +1,13 @@
 #include "target.h"
 
-pid_t Target = -1;
+Target target = -1;
 
-pid_t targetGet(void)
+Target targetGet(void)
 {
-	return Target;
+	return target;
 }
 
-void targetSet(pid_t target)
+void targetSet(Target t)
 {
-	Target = target;
+	target = t;
 }

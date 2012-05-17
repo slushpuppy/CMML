@@ -1,7 +1,7 @@
 #ifndef __target_h_
 #define __target_h_
 
-#include "mml.h"
+#include "types.h"
 
 //TODO: Think out the target interface...
 //
@@ -10,9 +10,9 @@
 // Then add some finding functions to find targets by 
 //   size? title? colors (loop thru targets looking for something?)?
 
-extern pid_t Target;
+extern Target target;
 
-extern pid_t targetGet(void);
-extern void targetSet(pid_t target);
+extern Target targetGet(void);
+extern void targetSet(Target t);
 
 #endif

@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <unistd.h>
 
 #ifdef min
 # undef min
@@ -43,5 +44,7 @@ typedef struct {
 	double S;
 	double L;
 } HSL;
+
+typedef pid_t Target;
 
 #endif
