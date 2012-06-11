@@ -1,16 +1,17 @@
-#include "keyboard.h"
+#include <mml.h>
+#include <keyboard.h>
 
-void keyboardDown(keyboardKey key)
+extern void keyboardDown(keyboardKey key)
 {
-	
+
 }
 
-void keyboardUp(keyboardKey key)
+extern void keyboardUp(keyboardKey key)
 {
-	
+
 }
 
-keyboardKey keyboardToKey(const char c)
+extern keyboardKey keyboardToKey(const char c)
 {
 	return -1;
 }

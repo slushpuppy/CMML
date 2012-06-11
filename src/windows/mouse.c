@@ -1,4 +1,6 @@
-#include "mouse.h"
+#include <mml.h>
+#include <winuser.h>
+#include <mouse.h>
 
 void mouseMove(uint32_t x, uint32_t y)
 {
@@ -29,9 +31,9 @@ void mouseDown(mouseButton button)
 {
 	INPUT input;
 	memset(&input, 0, sizeof(input));
-	
+
 	input.type = INPUT_MOUSE;
-	
+
 	input.mi.dwFlags = _b2b(button, false);
 	SendInput(1, &input, sizeof(input));
 }
@@ -40,9 +42,9 @@ void mouseUp(mouseButton button)
 {
 	INPUT input;
 	memset(&input, 0, sizeof(input));
-	
+
 	input.type = INPUT_MOUSE;
-	
+
 	input.mi.dwFlags = _b2b(button, true);
 	SendInput(1, &input, sizeof(input));
 }

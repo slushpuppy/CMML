@@ -1,4 +1,4 @@
-#include "mouse.h"
+#include <mouse.h>
 
 void mouseClick(mouseButton button)
 {

@@ -1,5 +1,5 @@
-#include "version.h"
-#include "config.h"
+#include <version.h>
+//#include <config.h>
 
 char *mmlVersion(void)
 {

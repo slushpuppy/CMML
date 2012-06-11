@@ -33,6 +33,31 @@ typedef struct {
 	double L;
 } HSL;
 
+typedef struct {
+    int x,y;
+} TPoint,SIMBA_TPoint;
+
+
+/* Unpacked records E.g. int example(SIMBA_TPoint * ptr) */
+
+typedef struct {
+    char * data;
+} SIMBA_string;
+/* E.g. int example(SIMBA_string str) */
+
+typedef struct {
+    int high;
+    union {
+        SIMBA_TPoint * atpa;
+        int * integer;
+        SIMBA_string * string;
+    } ;
+} SIMBA_Array;
+/* E.g. int example(SIMBA_Array array) {
+array.atpa
+array.integer
+array.string
+} */
 typedef pid_t Target;
 
 #endif

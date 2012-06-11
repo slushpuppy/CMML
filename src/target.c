@@ -1,4 +1,4 @@
-#include "target.h"
+#include <mouse.h>
 
 Target target = -1;
 

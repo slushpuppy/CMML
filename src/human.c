@@ -1,4 +1,4 @@
-#include "human.h"
+#include <human.h>
 #include <stdlib.h>
 #include <time.h>
 #include <limits.h>
@@ -73,7 +73,7 @@ void mouseMoveH(uint32_t x, uint32_t y, uint8_t r)
 
 		veloY = veloY + windY;
 		veloY = veloY + gravity * (end_y - start_y) / dist;
-		
+
 		if (hypot(veloX, veloY) > max_step) {
 			randDist = max_step / 2.0 + randNumber(round(round(max_step) / 2));
 			veloMag = sqrt(veloX * veloX + veloY * veloY);
