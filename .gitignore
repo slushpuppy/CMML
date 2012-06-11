@@ -2,4 +2,8 @@
 *.la
 *.lo
 *~
+~*
 build*
+*.depend
+*.layout
+*.cbp
